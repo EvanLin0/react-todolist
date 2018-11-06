@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 // 引入组件配置路由
-import Recommend from 'components/recommend/recommend'
+// import Recommend from 'components/recommend/recommend'
 import Singer from 'components/singer/singer'
 import Rank from 'components/rank/rank'
 import Search from 'components/search/search'
@@ -17,7 +17,7 @@ export default new Router({
     {
       path: '/recommend',
       name: 'recommend',
-      component: Recommend
+      component: () => import('components/recommend/recommend')// 页面显示时才会加载,有点像懒加载(页面懒加载页面模块)
     },
     {
       path: '/singer',
